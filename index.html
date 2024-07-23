@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Modulo di Contatto</h2>
+        <form action="/submit-form" method="post">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+            <button type="button" onclick="saveClick()">Salva</button>
+            <button type="button" onclick="deleteClick()">Elimina</button>
+            <p id="nameP"></p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
