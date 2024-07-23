@@ -5,7 +5,8 @@ nameP.innerText = localStorage.getItem("name");
 
 
 const contator = document.getElementById('contator');
-let contatorValue = sessionStorage.getItem('contator') || 0;
+let contatorValue = sessionStorage.getItem('contator') || 0; //gli stiamo dicendo di prendere il valore di sessionStorage.setItem all'inizializzazione della pagina (window.onload)
+//e se non lo trova metterà lo 0.
 contator.innerText=contatorValue;
 
 function saveClick() {
@@ -21,11 +22,10 @@ function deleteClick () {
 
 function contatorTimer () {
     setInterval (()=> {
-        contatorValue ++;
+        contatorValue ++; //lo 0 di let contatorValue aumenta ogni volta di uno
         contator.innerText = contatorValue;
-        sessionStorage.setItem("contator", contatorValue);
-    },1000);
+        sessionStorage.setItem("contator", contatorValue); //stiamo salvando il valore nel browser
+    },1000); 
 }
  
-window.onload = contatorTimer();
-
+window.onload = contatorTimer(); //gli stiamo dicendo che all'avvio della pagina deve far partire la funzione contatorTimer!!!
